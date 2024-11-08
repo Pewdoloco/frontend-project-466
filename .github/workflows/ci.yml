@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.14.0'
+      - run: npm install
+      - run: npm test
+      - run: npm run lint
+      - name: Run CodeClimate test reporter
+        run: |
+            ./cc-test-reporter before-build
+             npm test
+            ./cc-test-reporter after-build --exit-code $?
+        env:
+            CC_TEST_REPORTER_ID: ${ secrets.CC_TEST_REPORTER_ID }
+
