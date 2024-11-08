@@ -1,6 +1,7 @@
-# Установка зависимостей
+# Makefile для запуска линтера, тестов и проверки публикации
+
 install:
-	npm ci 
+	npm install
 
 lint:
 	npx eslint .
@@ -8,4 +9,8 @@ lint:
 test:
 	npx jest --coverage
 
-.PHONY: install lint test
+# Команда для проверки публикации пакета без фактической отправки
+publish:
+	npm publish --dry-run
+
+.PHONY: install lint test publish
