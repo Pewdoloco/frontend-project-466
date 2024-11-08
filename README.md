@@ -1,4 +1,4 @@
-### Hexlet tests and linter status:
+### Hexlet tests and Code Climate:
 [![Actions Status](https://github.com/Pewdoloco/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Pewdoloco/frontend-project-46/actions)
 
 **[![Maintainability](https://api.codeclimate.com/v1/badges/70d8de498245e3e44ee9/maintainability)](https://codeclimate.com/github/Pewdoloco/frontend-project-46/maintainability)**
